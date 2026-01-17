@@ -1,0 +1,177 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #444;
+}
+
+/* Mods Account Layout */
+.mods-account {
+  display: flex;
+  gap: 20px; /* Space between the two sections */
+}
+
+/* Left Column: Employee Reports (with fixed size and scroll) */
+.employee-reports {
+  flex: 1.5; /* Slightly larger than chart */
+  min-width: 300px;
+  max-height: 500px; /* Fixed height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #444;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.employee-logs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.employee-log {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ddd;
+}
+
+.employee-header {
+  display: flex;
+  align-items: center;
+}
+
+.employee-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-right: 15px;
+}
+
+.employee-header span {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.employee-message p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.employee-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-btn.approve {
+  background-color: #00bfa5;
+  color: white;
+}
+
+.action-btn.approve:hover {
+  background-color: #00897b;
+}
+
+.action-btn.reject {
+  background-color: #f44336;
+  color: white;
+}
+
+.action-btn.reject:hover {
+  background-color: #d32f2f;
+}
+
+.employee-log.blurred {
+  filter: blur(2px);
+  pointer-events: none; /* Disable interactions */
+  opacity: 0.6; /* Reduce opacity */
+}
+
+/* Right Column: ModsAccountChart */
+.mods-account-chart {
+  flex: 1;
+  min-width: 350px;
+  height: 500px;
+  padding: 20px;
+  background-color: #f0f0f5;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Logout Button */
+.logout-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.logout-btn:hover {
+  background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mods-account {
+    flex-direction: column; /* Stack columns vertically on small screens */
+  }
+
+  .employee-reports, .mods-account-chart {
+    max-height: none; /* Remove fixed height for mobile */
+  }
+}

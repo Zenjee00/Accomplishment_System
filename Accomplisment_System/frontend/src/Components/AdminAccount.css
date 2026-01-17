@@ -1,0 +1,296 @@
+ /* 🌟 General Styling */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f4f6f9;
+        color: #333;
+    }
+
+    /* 🔷 Admin Container */
+    .admin-container {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 12px;
+        background: white;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    
+    /* 🔹 Top Bar */
+    /* 🌟 Top Bar - Fix Alignment */
+    .top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .top-bar input[type="text"] {
+        padding: 10px;
+        width: 100%;
+        max-width: 250px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        outline: none;
+        transition: 0.3s;
+    }
+
+    .top-bar input[type="text"]:focus {
+        border-color: #007bff;
+    }
+
+    .top-bar .button-group {
+        display: flex;
+        gap: 10px; /* Adds spacing between buttons */
+    }
+
+    .top-bar button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 14px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s;
+        min-width: 100px;
+        text-align: center;
+    }
+
+    .top-bar button:hover {
+        background-color: #0056b3;
+    }
+
+    /* Logout Button */
+    .logout-button {
+        background-color: #dc3545 !important;
+    }
+
+    .logout-button:hover {
+        background-color: #c82333 !important;
+    }
+
+    /* 📝 Fix Checkbox Alignment */
+    .password-input {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 5px;
+    }
+
+    .password-input label {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: #555;
+    }
+
+    .password-input input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+    }
+
+
+    /* 📦 Layout Structure */
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .top-section,
+    .bottom-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .addadmin-container,
+    .users-container,
+    .edit-container,
+    .chart-container {
+        flex: 1;
+        min-width: 350px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    /* 🏷️ Form Styling */
+   /* 🏷️ Form Styling */
+.minimal-form input,
+.minimal-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.3s;
+    font-size: 14px; /* Ensures consistent font size */
+}
+
+/* Match the hover and focus behavior */
+.minimal-form input:focus,
+.minimal-form select:focus {
+    border-color: #007bff;
+}
+
+/* Optional: add a subtle arrow icon to the select box */
+.minimal-form select {
+    -webkit-appearance: none; /* Removes the default appearance in WebKit browsers */
+    -moz-appearance: none; /* Removes the default appearance in Mozilla browsers */
+    appearance: none; /* Modern standard for other browsers */
+    background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23666" d="M2 0L0 2h4z"/></svg>') no-repeat right 10px center;
+    background-size: 8px 10px;
+    background-color: white; /* Ensures it matches the input background */
+    cursor: pointer;
+}
+
+
+    /* 📋 Users Table */
+    .users-container {
+        max-width: 1000px; /* Set a maximum width for the table container */
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    .users-table-wrapper {
+        max-height: 400px; /* Locks the table height */
+        overflow-y: auto;  /* Enables vertical scrolling */
+        overflow-x: hidden; /* Prevents horizontal scrolling */
+        background-color: #f8f8f8; /* Optional: Adds background to the wrapper */
+        border: 1px solid #ddd; /* Optional: Border around the table wrapper */
+        border-radius: 8px; /* Optional: Rounded corners for aesthetics */
+    }
+    
+    .users-table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+    }
+    
+    .users-table th,
+    .users-table td {
+        border-bottom: 1px solid #b43333;
+        padding: 5px;
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .users-table th {
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+        position: sticky; /* Keeps the header fixed while scrolling */
+        top: 0;
+        z-index: 1;
+    }
+    
+    .users-table tr:hover {
+        background-color: #f8f9fc;
+    }
+    
+    /* Buttons in Table */
+    .users-table td button {
+        padding: 6px 12px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s;
+        font-size: 14px;
+    }
+    
+    .users-table td button:first-child {
+        background-color: #17a2b8;
+        color: white;
+    }
+    
+    .users-table td button:first-child:hover {
+        background-color: #138496;
+    }
+    
+    .users-table td button:last-child {
+        background-color: #dc3545;
+        color: white;
+    }
+    
+    .users-table td button:last-child:hover {
+        background-color: #c82333;
+    }
+    
+    
+
+    .chart-container canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* 2/28/2025 */
+
+    .admin-logs-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f8f8;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .admin-logs-table-wrapper {
+        max-height: 300px; /* Locks the table height */
+        overflow-y: auto; /* Enables vertical scrolling */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+    
+    .admin-logs-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    .admin-logs-table th,
+    .admin-logs-table td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        white-space: nowrap; /* Prevents wrapping of text */
+        text-overflow: ellipsis; /* Shorten long text with ellipsis */
+        overflow: hidden; /* Hide the overflowed text */
+        max-width: 200px; /* Set a max width for the cells */
+    }
+    
+    .admin-logs-table th {
+        background-color: #4CAF50;
+        color: white;
+        position: sticky; /* Keeps header fixed while scrolling */
+        top: 0;
+        z-index: 1; /* Ensures the header stays above content while scrolling */
+    }
+    
+    .admin-logs-table td.log-details {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 300px; /* Adjust the width for the "Details" column */
+    }
+    
+    .admin-logs-table tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+    
+    /* Adjust text alignment for "No logs found" row */
+    .admin-logs-table tbody td {
+        text-align: center;
+    }
+    

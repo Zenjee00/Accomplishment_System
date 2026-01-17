@@ -1,0 +1,183 @@
+.wrapper {
+    position: relative;
+    width: 420px;
+    height: auto;
+    background-color: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition: height .2s ease;
+}
+
+/* Style for the header */  
+header {
+    font-size: 32px;
+    text-align: center;
+    color: #030303;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the paragraph */
+p {
+    font-size: 16px;
+    text-align: center;
+    color: #0f0f0f;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+.wrapper.active {
+    height: 850px;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .form-box.login {
+    transition: translate .18s ease;
+    translate: 0;
+}
+
+.wrapper.active .form-box.login {
+    transition: none;
+    translate: -400px;
+}
+
+.wrapper .form-box.register {
+    position: absolute;
+    translate: 400px;
+}
+
+.wrapper.active .form-box.register {
+    transition: translate .18s ease;
+    translate: 0;
+}
+
+
+
+.input-box select {
+    position: relative;
+    width: 40%;
+    height: 30px;
+    margin-left: 4px;
+    background: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.input-box select:focus {
+    border-color: #00bcd4;
+}
+
+form h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+form .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 28px 0;
+}
+
+.readonly-input {
+    background-color: #f0f0f0;
+    color: #888;
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 40px 20px 20px;
+    transition: padding 0.3s ease-in-out;
+}
+
+.input-box input::placeholder {
+    color: #fff;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.input-box input:focus::placeholder {
+    opacity: 0; /* Placeholder vanishes when the input field is focused */
+}
+
+input:focus {
+    border: 2px solid #00bcd4; /* Change the border color when the input is focused */
+}
+
+form .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+
+.remember-forgot label input {
+    accent-color: #fff;
+    margin-right: 4px;
+}
+
+form button {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #000000;
+    font-weight: 700;
+}
+
+form .register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+
+/* Updated style for input and button caret visibility */
+    button, a, h1, label, select  {
+    caret-color: transparent;
+}
+
+.g-recaptcha {
+    transform: scale(0.85);
+    transform-origin: 0 0;
+    display: inline-block; /* Removes the container-like behavior */
+}
