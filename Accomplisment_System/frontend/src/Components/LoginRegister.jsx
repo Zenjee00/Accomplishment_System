@@ -131,14 +131,20 @@ const LoginRegister = () => {
         setShowPassword(!showPassword);
     };
 
+    const handleForgotPassword = (e) => {
+        e.preventDefault();
+        alert('Forgot password flow is coming soon.');
+    };
+
     return (
         <div className={`wrapper${action}`}>
             <div className="form-box login">
                 <form onSubmit={handleLogin}>
-                    <h1>Employee Login</h1>
+                    <h1><span>Employee</span> Login</h1>
+                    <p className="form-subtitle">Welcome back. Sign in to continue tracking your wins.</p>
                     <div className="input-box">
                         <input
-                            type="text"
+                            type="email"
                             name="email"
                             placeholder="Email"
                             value={formData.email}
@@ -160,13 +166,13 @@ const LoginRegister = () => {
                         <label>
                             <input type="checkbox" onChange={toggleShowPassword} /> Show Password
                         </label>
-                        <a href="#">Forgot Password?</a>
+                        <button type="button" className="inline-link" onClick={handleForgotPassword}>Forgot Password?</button>
                     </div>
                     <RecaptchaComponent onChange={handleRecaptchaChange} />
                     <button type="submit" disabled={!recaptchaToken}>Login</button>
                     <div className="register-link">
                         <p>Don't have an account?
-                            <a href="#" onClick={registerLink}> Register</a>
+                            <button type="button" className="inline-link" onClick={registerLink}> Register</button>
                         </p>
                     </div>
                 </form>
@@ -174,7 +180,8 @@ const LoginRegister = () => {
 
             <div className="form-box register">
                 <form onSubmit={handleRegister}>
-                    <h1>Registration</h1>
+                    <h1><span>Create</span> Account</h1>
+                    <p className="form-subtitle">Build your profile and join your team dashboard.</p>
                     <div className="input-box">
                         <input
                             type="text"
@@ -261,7 +268,7 @@ const LoginRegister = () => {
                     <button type="submit" disabled={!recaptchaToken}>Register</button>
                     <div className="register-link">
                         <p>Already have an account?
-                            <a href="#" onClick={loginLink}> Login</a>
+                            <button type="button" className="inline-link" onClick={loginLink}> Login</button>
                         </p>
                     </div>
                 </form>
